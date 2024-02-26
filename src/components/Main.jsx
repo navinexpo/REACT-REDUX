@@ -1,10 +1,7 @@
-import "./App.css";
-// import Main from "./components/Main";
-import Header from "./components/Header";
 import { addToCart } from "./redux/action";
 import { useDispatch } from "react-redux";
 
-function App() {
+function Main() {
   const dispatch = useDispatch();
 
   const product = {
@@ -14,11 +11,10 @@ function App() {
     color: "red",
   };
   return (
-    <div className="App">
-      <Header />
+    <div>
       <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
     </div>
   );
 }
 
-export default App;
+export default Main;
