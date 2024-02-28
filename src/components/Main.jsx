@@ -1,18 +1,24 @@
-import { addToCart } from "./redux/action";
-import { useDispatch } from "react-redux";
+import { addToCart, emptyCart, removeToCart } from '../redux/action';
+import { useDispatch } from 'react-redux'
+
 
 function Main() {
   const dispatch = useDispatch();
-
   const product = {
-    name: "I Phone",
-    type: "mobile",
-    price: 10202,
-    color: "red",
-  };
+    name: 'i Phone',
+    category: 'mobile',
+    price: 10000,
+    color: 'red'
+  }
   return (
     <div>
-      <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+      <button onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
+      <div>
+      <button onClick={() => dispatch(removeToCart(product))}>Remove from Cart</button>
+      </div>
+      <div>
+      <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
+      </div>
     </div>
   );
 }
